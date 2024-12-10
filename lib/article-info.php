@@ -1,3 +1,45 @@
+
+
+<div data-aos="zoom-in-up" class="my-14 mt-28 flex flex-col lg:flex-row lg:space-x-20 aos-init aos-animate">
+    <?php
+    $condition = "link='".page_url()."'";
+    $result_top=select_all_sql('content',$condition);
+    foreach ($result_top as $value_top) {
+        ?>
+        <div class="lg:w-6/12">
+            <img class="rounded-xl w-full mb-6" src="assets/img/<?= $value_top['img_id1']?>">
+            <span class="bg-yellow-300 text-darken font-semibold px-4 py-px text-sm rounded-full">NEWS</span>
+            <h1 class="text-gray-800 font-semibold my-3 text-xl"><?= $value_top['title']?></h1>
+            <p class="text-gray-500 mb-3">...</p>
+            <a href="<?= $value_top['link']?>" class="underline">Read more</a>
+        </div>
+
+    <?php } ?>
+</div>
+
+<div class="lg:w-7/12 flex flex-col justify-between mt-12 space-y-5 lg:space-y-0 lg:mt-0">
+    <?php
+    $result=select_all_sql('content','top=0 LIMIT 3');
+    foreach ($result as $value) {
+        ?>
+        <div class="flex space-x-5">
+            <div class="w-4/12">
+                <div class="relative">
+                    <img class="rounded-xl w-full" src="assets/img/<?= $value['img_id1']?>">
+                    <!--<span class="absolute bottom-2 right-2 bg-yellow-300 text-darken font-semibold px-4 py-px text-sm rounded-full hidden sm:block">Visa</span>-->
+                </div>
+            </div>
+            <div class="w-8/12">
+                <h2 class="text-gray-800 text-sm sm:text-lg font-semibold" title="<?= $value['title']?>"><?= $value['title']?></h2>
+                <p class="text-gray-500 my-2 sm:my-4 text-xs sm:text-md">...</p>
+                <a href="<?= $value['link']?>" class="underline">Read more</a>
+            </div>
+        </div>
+
+
+    <?php } ?>
+</div>
+
 <div class="grid md:grid-cols-3 gap-14 md:gap-5 mt-20">
     <div data-aos="fade-up" class="bg-white shadow-xl p-6 text-center rounded-xl aos-init aos-animate">
         <div style="background: #5B72EE;" class="rounded-full w-16 h-16 flex items-center justify-center mx-auto shadow-lg transform -translate-y-12">
@@ -39,41 +81,3 @@
     </div>
 </div>
 
-
-
-<div data-aos="zoom-in-up" class="my-14 mt-28 flex flex-col lg:flex-row lg:space-x-20 aos-init aos-animate">
-    <?php
-    $result_top=select_all_sql('content','top=1 LIMIT 1');
-    foreach ($result_top as $value_top) {
-        ?>
-    <div class="lg:w-6/12">
-        <img class="rounded-xl w-full mb-6" src="assets/img/<?= $value_top['img_id1']?>">
-        <span class="bg-yellow-300 text-darken font-semibold px-4 py-px text-sm rounded-full">NEWS</span>
-        <h1 class="text-gray-800 font-semibold my-3 text-xl"><?= $value_top['title']?></h1>
-        <p class="text-gray-500 mb-3">...</p>
-        <a href="<?= $value_top['link']?>" class="underline">Read more</a>
-    </div>
-    <div class="lg:w-7/12 flex flex-col justify-between mt-12 space-y-5 lg:space-y-0 lg:mt-0">
-        <?php
-        $result=select_all_sql('content','top=0 LIMIT 3');
-        foreach ($result as $value) {
-        ?>
-        <div class="flex space-x-5">
-            <div class="w-4/12">
-                <div class="relative">
-                    <img class="rounded-xl w-full" src="assets/img/<?= $value['img_id1']?>">
-                    <!--<span class="absolute bottom-2 right-2 bg-yellow-300 text-darken font-semibold px-4 py-px text-sm rounded-full hidden sm:block">Visa</span>-->
-                </div>
-            </div>
-            <div class="w-8/12">
-                <h2 class="text-gray-800 text-sm sm:text-lg font-semibold" title="<?= $value['title']?>"><?= $value['title']?></h2>
-                <p class="text-gray-500 my-2 sm:my-4 text-xs sm:text-md">...</p>
-                <a href="<?= $value['link']?>" class="underline">Read more</a>
-            </div>
-        </div>
-
-
-        <?php } ?>
-    </div>
-    <?php } ?>
-</div>
