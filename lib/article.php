@@ -68,7 +68,7 @@
             <div class="w-8/12">
                 <h2 class="text-gray-800 text-sm sm:text-lg font-semibold" title="<?= $value['title']?>"><?= $value['title']?></h2>
                 <p class="text-gray-500 my-2 sm:my-4 text-xs sm:text-md">...</p>
-                <a href="<?= $value_top['link']?>" class="underline">Read more</a>
+                <a href="<?= $value['link']?>" class="underline">Read more</a>
             </div>
         </div>
 
