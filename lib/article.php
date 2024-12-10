@@ -47,7 +47,7 @@
     foreach ($result_top as $value_top) {
         ?>
     <div class="lg:w-6/12">
-        <img class="w-full mb-6" src="assets/img/laptop-news.png">
+        <img class="w-full mb-6" src="assets/img/<?= $value_top['img_id1']?>">
         <span class="bg-yellow-300 text-darken font-semibold px-4 py-px text-sm rounded-full">NEWS</span>
         <h1 class="text-gray-800 font-semibold my-3 text-xl"><?= $value_top['title']?></h1>
         <p class="text-gray-500 mb-3">...</p>
