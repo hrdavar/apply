@@ -8,7 +8,6 @@ const DBCHARSET='UTF8';
 const DBTYPE='mysql';
 
 
-
 try {
     $connection = new PDO(
         DBTYPE . ':host=' . SERVER . ';dbname=' . DBNAME . ';charset=' . DBCHARSET,
