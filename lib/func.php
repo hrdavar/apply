@@ -107,6 +107,14 @@ function sql_count($table_name)
     $result->execute();
     $count = $result->rowCount();
     return $count;}
+function select_row_sql($table_name,$condition) {
+    global $connection;
+    if (empty($condition)){$condition=1;}
+    $result = $connection->prepare("SELECT * FROM $table_name WHERE $condition");
+        $result->execute();
+        $row = $result->fetch(PDO::FETCH_ASSOC);
+        return $row;}
+
 function count_all_visitors() {
     global $connection;
 

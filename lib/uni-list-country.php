@@ -2,7 +2,12 @@
 
 
 <div class="relative overflow-x-auto shadow-md sm:rounded-lg">
-    <div class="w-728 h-90 border border-1 m-1 p-1">728*90</div>
+    <div class="w-728 h-90 border border-1 m-1 p-1">
+        <?php
+        $result=select_row_sql('advertisement','id=1');
+        echo $result['ads'];
+        ?>
+    </div>
     <table class="w-full text-sm text-left rtl:text-right text-gray-500 dark:text-gray-400">
         <thead class="text-xs text-gray-700 uppercase bg-gray-50 dark:bg-gray-700 dark:text-gray-400">
             <tr>
@@ -28,7 +33,12 @@ Action
 
             <tr>
                 <th scope="row" class="px-6 py-4 font-medium text-gray-900 whitespace-nowrap dark:text-white"><?=$value['name']?></th>
-                <td class="px-6 py-4"><?=$value['city_id']?></td>
+                <td class="px-6 py-4">
+                    <?php
+                    $city=select_row_sql('cities','id='.$value['city_id'] );
+                    ?>
+                    <a target="_blank" href="https://www.google.com/search?sitesearch=&q=<?=$city['name']?> city" title="Click to see where it is located"><?=$city['name']?></a>
+                </td>
                 <td class="px-6 py-4"><a href="<?=str_replace(' ','-',$value['name']).'-University-Scholarship'?>"><?=$value['name']?> University Scholarship</a></td>
                 <td class="px-6 py-4"><?=$value['ranking']?></td>
                 <td class="px-6 py-4">
