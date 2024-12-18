@@ -18,21 +18,21 @@
         </div>
         <!--Right Col-->
         <div class="w-full lg:w-6/12 lg:-mt-10 relative" id="girl">
-            <img data-aos="fade-up" data-aos-once="true" class="w-10/12 mx-auto 2xl:-mb-20" src="assets/img/girl.png" />
+            <img class="w-10/12 mx-auto 2xl:-mb-20" src="assets/img/girl.png" />
             <!-- calendar -->
-            <div data-aos="fade-up" data-aos-delay="300" data-aos-once="true" class="absolute top-20 -left-6 sm:top-32 sm:left-10 md:top-40 md:left-16 lg:-left-0 lg:top-52 floating-4">
+            <div class="absolute top-20 -left-6 sm:top-32 sm:left-10 md:top-40 md:left-16 lg:-left-0 lg:top-52 floating-4">
                 <img class="bg-white bg-opacity-80 rounded-lg h-12 sm:h-16" src="assets/img/canadian-universities.png">
             </div>
             <!-- red -->
-            <div data-aos="fade-up" data-aos-delay="400" data-aos-once="true" class="absolute top-20 right-10 sm:right-24 sm:top-28 md:top-36 md:right-32 lg:top-32 lg:right-16 floating">
+            <div class="absolute top-20 right-10 sm:right-24 sm:top-28 md:top-36 md:right-32 lg:top-32 lg:right-16 floating">
                 <svg class="h-16 sm:h-24" viewBox="0 0 149 149" fill="none" xmlns="http://www.w3.org/2000/svg"><g filter="url(#filter0_d)"><rect x="40" y="32" width="69" height="69" rx="14" fill="#F3627C"/></g><rect x="51.35" y="44.075" width="47.3" height="44.85" rx="8" fill="white"/><path d="M74.5 54.425V78.575" stroke="#F25471" stroke-width="4" stroke-linecap="round"/><path d="M65.875 58.7375L65.875 78.575" stroke="#F25471" stroke-width="4" stroke-linecap="round"/><path d="M83.125 63.9125V78.575" stroke="#F25471" stroke-width="4" stroke-linecap="round"/><defs><filter id="filter0_d" x="0" y="0" width="149" height="149" filterUnits="userSpaceOnUse" color-interpolation-filters="sRGB"><feFlood flood-opacity="0" result="BackgroundImageFix"/><feColorMatrix in="SourceAlpha" type="matrix" values="0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 127 0"/><feOffset dy="8"/><feGaussianBlur stdDeviation="20"/><feColorMatrix type="matrix" values="0 0 0 0 0.825 0 0 0 0 0.300438 0 0 0 0 0.396718 0 0 0 0.26 0"/><feBlend mode="normal" in2="BackgroundImageFix" result="effect1_dropShadow"/><feBlend mode="normal" in="SourceGraphic" in2="effect1_dropShadow" result="shape"/></filter></defs></svg>
             </div>
             <!-- ux class -->
-            <div data-aos="fade-up" data-aos-delay="500" data-aos-once="true" class="absolute bottom-14 -left-4 sm:left-2 sm:bottom-20 lg:bottom-24 lg:-left-4 floating">
+            <div class="absolute bottom-14 -left-4 sm:left-2 sm:bottom-20 lg:bottom-24 lg:-left-4 floating">
                 <img class="bg-white bg-opacity-80 rounded-lg h-20 sm:h-28" src="assets/img/Find-scholarships-for-free.png" alt="">
             </div>
             <!-- congrats -->
-            <div data-aos="fade-up" data-aos-delay="600" data-aos-once="true" class="absolute bottom-20 md:bottom-48 lg:bottom-52 -right-6 lg:right-8 floating-4">
+            <div class="absolute bottom-20 md:bottom-48 lg:bottom-52 -right-6 lg:right-8 floating-4">
                 <img class="bg-white bg-opacity-80 rounded-lg h-12 sm:h-16" src="assets/img/American-universities.png" alt="">
             </div>
         </div>
@@ -44,3 +44,22 @@
         <div class="bg-white w-full h-20 -mt-px"></div>
     </div>
 </div>
+
+<div data-aos="flip-up" class="max-w-4xl mx-auto text-center mt-24 aos-init aos-animate">
+    <p class="font-bold text-darken my-3 text-2xl">Applyha has been updated with <span class="text-yellow-500"><?= count_sql_row('university')?> universities</span>
+    <p class="font-bold text-darken my-3 text-2xl">We support <span class="text-yellow-500"><?= count_sql_row('cities')?> cities AND <?= count_sql_row('country')?> country </span>
+    </p>
+    <p class="leading-relaxed text-gray-500">Until now</p>
+</div>
+<!--
+<div class="max-w-4xl mx-auto">
+    <h1 class="text-center mb-3 text-gray-400 font-medium">Trusted by 5,00000000+ Companies Worldwide</h1>
+    <div class="grid grid-cols-3 lg:grid-cols-6 gap-4 justify-items-center">
+        <img class="h-7" src="assets/img/company/google.svg">
+        <img class="h-7" src="assets/img/company/netflix.svg">
+        <img class="h-7" src="assets/img/company/airbnb.svg">
+        <img class="h-7 transform translate-y-2" src="assets/img/company/amazon.svg">
+        <img class="h-7" src="assets/img/company/facebook.svg">
+        <img class="h-7" src="assets/img/company/grab.svg">
+    </div>
+</div>-->

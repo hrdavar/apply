@@ -79,11 +79,11 @@ function update_visitors($id = null, $table_name = null, $ip = null)
         }
     }
 }
-function count_sql_row($sql2){
+function count_sql_row($table_name){
     global $connection;
     //$sql='SELECT * FROM ';
     //$sql .=$sql2;
-    $result = $connection->prepare("SELECT * FROM $sql2 ");
+    $result = $connection->prepare("SELECT * FROM $table_name ");
     $result->execute();
     $count = $result->rowCount();
     return $count;}
