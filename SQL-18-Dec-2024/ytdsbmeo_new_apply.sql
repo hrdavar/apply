@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: localhost
--- Generation Time: Dec 17, 2024 at 07:01 PM
+-- Generation Time: Dec 18, 2024 at 09:00 PM
 -- Server version: 8.0.40
 -- PHP Version: 8.2.12
 
@@ -48,7 +48,7 @@ INSERT INTO `advertisement` (`id`, `ads`) VALUES
 
 CREATE TABLE `cities` (
   `id` int NOT NULL,
-  `country_id` int NOT NULL,
+  `country_id` int DEFAULT NULL,
   `name` text CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci,
   `name2` text CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
@@ -70,7 +70,27 @@ INSERT INTO `cities` (`id`, `country_id`, `name`, `name2`) VALUES
 (10, 1, 'Philadelphia', NULL),
 (11, 1, 'Los Angeles', NULL),
 (12, 1, 'Ann Arbor', NULL),
-(13, 1, 'Ithaca', NULL);
+(13, 1, 'Ithaca', NULL),
+(14, 1, 'Chicago', NULL),
+(15, 1, 'Berkeley', NULL),
+(16, 1, 'Charlottesville', NULL),
+(17, 1, 'Atlanta', NULL),
+(18, NULL, 'Chapel Hill', NULL),
+(19, NULL, NULL, NULL),
+(20, NULL, NULL, NULL),
+(21, NULL, NULL, NULL),
+(22, NULL, NULL, NULL),
+(23, NULL, NULL, NULL),
+(24, NULL, NULL, NULL),
+(25, NULL, NULL, NULL),
+(26, NULL, NULL, NULL),
+(27, NULL, NULL, NULL),
+(28, NULL, NULL, NULL),
+(29, NULL, NULL, NULL),
+(30, NULL, NULL, NULL),
+(31, NULL, NULL, NULL),
+(32, NULL, NULL, NULL),
+(33, NULL, NULL, NULL);
 
 -- --------------------------------------------------------
 
@@ -295,14 +315,14 @@ INSERT INTO `page` (`id`, `title`, `keyword`, `link`, `file`, `country_id`, `cit
 
 CREATE TABLE `university` (
   `id` int NOT NULL,
-  `name` varchar(255) CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci NOT NULL,
+  `name` varchar(255) CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci DEFAULT NULL,
   `name2` text CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci,
-  `country_id` int NOT NULL,
-  `logo` text CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci NOT NULL,
-  `url` text CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci NOT NULL,
-  `ranking` int NOT NULL,
-  `city_id` int NOT NULL,
-  `description` text CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci NOT NULL
+  `country_id` int DEFAULT NULL,
+  `logo` text CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci,
+  `url` text CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci,
+  `ranking` int DEFAULT NULL,
+  `city_id` int DEFAULT NULL,
+  `description` text CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
 
 --
@@ -310,23 +330,66 @@ CREATE TABLE `university` (
 --
 
 INSERT INTO `university` (`id`, `name`, `name2`, `country_id`, `logo`, `url`, `ranking`, `city_id`, `description`) VALUES
-(1, 'Harvard', '', 1, '', 'harvard.edu', 0, 1, ''),
-(2, 'Massachusetts Institute of Technology', 'MIT', 1, '', 'mit.edu', 0, 1, ''),
-(3, 'Yale', '', 1, '', 'yale.edu', 0, 2, ''),
-(4, 'California Institute of Technology', NULL, 1, '', 'caltech.edu', 0, 3, ''),
+(1, 'Harvard', '', 1, '', 'harvard.edu', 1, 1, ''),
+(2, 'Massachusetts Institute of Technology', 'MIT', 1, '', 'mit.edu', 3, 1, ''),
+(3, 'Yale', '', 1, '', 'yale.edu', 7, 2, ''),
+(4, 'California Institute of Technology', 'Caltech', 1, '', 'caltech.edu', 4, 3, ''),
 (5, 'New York', '', 1, '', 'nyu.edu', 0, 5, ''),
 (6, 'Columbia', NULL, 1, '', 'columbia.edu', 0, 5, ''),
 (9, 'Stanford', '', 1, '', 'stanford.edu', 0, 7, ''),
-(10, 'Princeton', '', 1, '', 'princeton.edu', 0, 6, ''),
-(11, 'Pennsylvania', '', 1, '', 'upenn.edu', 0, 10, ''),
+(10, 'Princeton', '', 1, '', 'princeton.edu', 6, 6, ''),
+(11, 'Pennsylvania', '', 1, '', 'upenn.edu', 9, 10, ''),
 (12, 'Duke', NULL, 1, '', 'duke.edu', 0, 4, ''),
-(13, 'کلگری', 'calgary university', 2, '', '', 0, 0, ''),
-(14, 'مونیخ', 'LMU', 1, '', '', 0, 0, ''),
-(15, 'فنی مونیخ', 'TUM', 1, '', '', 0, 0, ''),
-(16, 'کالج لانگارا', 'langara', 1, '', '', 0, 0, ''),
-(17, 'آلبرتا', 'ualberta', 1, '', '', 0, 0, ''),
-(18, 'ترینیتی وسترن', 'twu ', 1, '', '', 0, 0, ''),
-(19, '', '', 1, '', '', 0, 0, '');
+(13, 'Chicago', '', 1, '', 'uchicago.edu', 5, 14, ''),
+(14, 'Johns Hopkins', NULL, 1, '', 'jhu.edu', 8, 9, ''),
+(15, 'Northwestern', NULL, 1, '', 'northwestern.edu', 10, 8, ''),
+(16, 'California, Berkeley', 'US Berkeley', 1, '', 'berkeley.edu', 11, 15, ''),
+(17, 'California, Los Angeles', 'ucla', 1, '', 'ucla.edu', 12, 11, ''),
+(18, 'Michigan', '', 1, '', '', 13, 12, ''),
+(19, 'Virginia', '', 1, '', '', 14, 16, ''),
+(20, 'Georgia Tech', 'Georgia Institute of Technology', 1, '', 'gatech.edu', 15, 17, ''),
+(21, 'North Carolina', 'unc', 1, NULL, 'unc.edu', 16, 18, NULL),
+(22, 'California, San Diego', 'UCSD', 1, NULL, 'ucsd.edu', NULL, NULL, NULL),
+(23, NULL, NULL, 1, NULL, NULL, NULL, NULL, NULL),
+(24, NULL, NULL, 1, NULL, NULL, NULL, NULL, NULL),
+(25, NULL, NULL, 1, NULL, NULL, NULL, NULL, NULL),
+(26, NULL, NULL, 1, NULL, NULL, NULL, NULL, NULL),
+(27, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL),
+(28, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL),
+(29, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL),
+(30, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL),
+(31, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL),
+(32, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL),
+(33, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL),
+(34, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL),
+(35, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL),
+(36, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL),
+(37, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL),
+(38, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL),
+(39, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL),
+(40, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL),
+(41, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL),
+(42, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL),
+(43, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL),
+(44, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL),
+(45, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL),
+(46, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL),
+(47, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL),
+(48, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL),
+(49, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL),
+(50, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL),
+(51, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL),
+(52, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL),
+(53, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL),
+(54, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL),
+(55, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL),
+(56, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL),
+(57, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL),
+(58, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL),
+(59, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL),
+(60, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL),
+(61, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL),
+(62, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL);
 
 --
 -- Indexes for dumped tables
@@ -400,7 +463,7 @@ ALTER TABLE `advertisement`
 -- AUTO_INCREMENT for table `cities`
 --
 ALTER TABLE `cities`
-  MODIFY `id` int NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=14;
+  MODIFY `id` int NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=34;
 
 --
 -- AUTO_INCREMENT for table `content`
@@ -442,7 +505,7 @@ ALTER TABLE `page`
 -- AUTO_INCREMENT for table `university`
 --
 ALTER TABLE `university`
-  MODIFY `id` int NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=20;
+  MODIFY `id` int NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=63;
 COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;

@@ -2,9 +2,6 @@
     <div class="max-w-screen-xl px-8 mx-auto flex flex-col lg:flex-row items-start">
         <!--Left Col-->
         <div class="flex flex-col w-full lg:w-6/12 justify-center lg:pt-24 items-start text-center lg:text-left mb-5 md:mb-0 border border-1">
-            a
-            a
-            a
             <h1  class="my-4 text-5xl font-bold leading-tight text-darken">
                 <span class="text-yellow-500">Find </span> Scholarship
             </h1>
